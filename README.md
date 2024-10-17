@@ -26,7 +26,16 @@ My usual tech stack is C# .NET in combination with Typescript (React or Angular)
 ### License Scanning
 
 - [ ] [OSV scanner](https://google.github.io/osv-scanner/experimental/license-scanning/)
-- [ ] [OWASP dep-scan](https://owasp.org/www-project-dep-scan/) 
+- [ ] [OWASP dep-scan](https://owasp.org/www-project-dep-scan/)
+
+## ReactAndAspNetCoreApp
+
+The sample application in this repository is created based on the Visual Studio project template: `React and ASP.NET Core` (Tags: `TypeScript`, `Web`)
+
+### Prerequisites
+
+- [Visual Studio 2022](https://visualstudio.microsoft.com/de/downloads/)
+- [NodeJS v20.18.0](https://nodejs.org/en)
 
 ## Troubleshooting
 
