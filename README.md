@@ -27,3 +27,7 @@ My usual tech stack is C# .NET in combination with Typescript (React or Angular)
 
 - [ ] [OSV scanner](https://google.github.io/osv-scanner/experimental/license-scanning/)
 - [ ] [OWASP dep-scan](https://owasp.org/www-project-dep-scan/) 
+
+## Troubleshooting
+
+If certificate creation fails during startup, ensure that directory `%AppData%\ASP.NET\https` exists.
