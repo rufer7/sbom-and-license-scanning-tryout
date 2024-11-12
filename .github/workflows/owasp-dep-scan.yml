@@ -14,19 +14,15 @@ jobs:
       - name: Install and set up ORAS
         uses: oras-project/setup-oras@v1
       - name: Download vulnerability DB and dep-scan
-        env:
-          VDB_HOME: "vdb_data"
         run: |
-          mkdir -p $VDB_HOME
-          oras pull ghcr.io/appthreat/vdb:v5 -o $VDB_HOME
-          oras pull ghcr.io/appthreat/depscan:v4 -o $VDB_HOME
+          oras pull ghcr.io/appthreat/vdb:v5 -o $RUNNER_TEMP
+          oras pull ghcr.io/appthreat/depscan:v4 -o $RUNNER_TEMP
       - name: Run depscan
         env:
-          VDB_HOME: "vdb_data"
           FETCH_LICENSE: true
         run: |
           cd src
-          $VDB_HOME/depscan --src ReactAndAspNetCoreApp.sln --reports-dir ./reports --csaf --profile license-compliance
+          $RUNNER_TEMP/depscan --src ReactAndAspNetCoreApp.sln --reports-dir ./reports --csaf --profile license-compliance
       - uses: actions/upload-artifact@v4
         with:
           path: ./reports
