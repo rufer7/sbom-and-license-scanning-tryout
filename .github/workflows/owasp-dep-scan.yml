@@ -1,0 +1,30 @@
+name: OWASP dep-scan
+
+on:
+  push:
+    branches: ["main"]
+
+jobs:
+  scan:
+    name: Scan .NET solution
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install and set up ORAS
+        uses: oras-project/setup-oras@v1
+      - name: Download vulnerability DB and dep-scan
+        run: |
+          export VDB_HOME=depscan
+          mkdir -p $VDB_HOME
+          oras pull ghcr.io/appthreat/vdb:v5 -o $VDB_HOME
+          oras pull ghcr.io/appthreat/depscan:v4 -o $VDB_HOME
+      - name: Run depscan
+        env:
+          VDB_HOME: "/home/runner/work/vdb_data"
+        run: |
+          cd src
+          depscan --src ReactAndAspNetCoreApp.sln --reports-dir ./reports --csaf --profile license-compliance
+      - uses: actions/upload-artifact@v1
+        with:
+          path: ./reports
