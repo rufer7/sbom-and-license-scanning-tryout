@@ -17,6 +17,7 @@ jobs:
         run: |
           oras pull ghcr.io/appthreat/vdb:v5 -o $RUNNER_TEMP
           oras pull ghcr.io/appthreat/depscan:v4 -o $RUNNER_TEMP
+          chmod +x $RUNNER_TEMP
       - name: Run depscan
         env:
           FETCH_LICENSE: true
