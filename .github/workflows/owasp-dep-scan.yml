@@ -27,7 +27,7 @@ jobs:
           FETCH_LICENSE: true
         run: |
           cd src
-          depscan --src ReactAndAspNetCoreApp.sln --reports-dir ./reports --csaf --profile license-compliance
+          $VDB_HOME/depscan --src ReactAndAspNetCoreApp.sln --reports-dir ./reports --csaf --profile license-compliance
       - uses: actions/upload-artifact@v4
         with:
           path: ./reports
