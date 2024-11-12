@@ -1,4 +1,4 @@
-name: OWASP dep-scan
+name: OWASP dep-scan demo
 
 on:
   push:
@@ -6,7 +6,7 @@ on:
 
 jobs:
   scan:
-    name: Scan .NET solution
+    name: Create SBOM of .NET solution
     runs-on: ubuntu-latest
 
     steps:
@@ -14,6 +14,8 @@ jobs:
       - name: Install and set up ORAS
         uses: oras-project/setup-oras@v1
       - name: Download vulnerability DB and dep-scan
+        env:
+          VDB_HOME: "vdb_data"
         run: |
           export VDB_HOME=depscan
           mkdir -p $VDB_HOME
@@ -21,7 +23,7 @@ jobs:
           oras pull ghcr.io/appthreat/depscan:v4 -o $VDB_HOME
       - name: Run depscan
         env:
-          VDB_HOME: "/home/runner/work/vdb_data"
+          VDB_HOME: "vdb_data"
           FETCH_LICENSE: true
         run: |
           cd src
