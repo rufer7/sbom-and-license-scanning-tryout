@@ -17,7 +17,6 @@ jobs:
         env:
           VDB_HOME: "vdb_data"
         run: |
-          export VDB_HOME=depscan
           mkdir -p $VDB_HOME
           oras pull ghcr.io/appthreat/vdb:v5 -o $VDB_HOME
           oras pull ghcr.io/appthreat/depscan:v4 -o $VDB_HOME
