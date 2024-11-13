@@ -22,7 +22,8 @@ jobs:
         env:
           FETCH_LICENSE: true
         run: |
-          $RUNNER_TEMP/depscan --src src --reports-dir $RUNNER_TEMP/reports --csaf --profile license-compliance
+          cd src
+          $RUNNER_TEMP/depscan --src ReactAndAspNetCoreApp.Server --reports-dir $RUNNER_TEMP/reports --csaf --profile license-compliance
       - uses: actions/upload-artifact@v4
         with:
           path: $RUNNER_TEMP/reports
