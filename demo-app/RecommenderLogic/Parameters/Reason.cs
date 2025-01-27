@@ -1,6 +1,6 @@
 ﻿namespace RecommenderLogic.Parameters;
 
-internal enum Reason
+public enum Reason
 {
     Unknown = 0,
     EatSleepRepeat = 1,

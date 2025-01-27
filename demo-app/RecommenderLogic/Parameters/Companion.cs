@@ -1,6 +1,6 @@
 ﻿namespace RecommenderLogic.Parameters;
 
-internal enum Companion
+public enum Companion
 {
     Unknown = 0,
     Solo = 1,
