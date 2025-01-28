@@ -22,6 +22,9 @@ My usual tech stack is C# .NET in combination with Typescript (React or Angular)
 - [ ] [OWASP dep-scan](https://owasp.org/www-project-dep-scan/) - uses - [CycloneDX](https://cyclonedx.org/) under the hood
 - [ ] [Microsoft sbom-tool](https://github.com/microsoft/sbom-tool)
 
+> [!NOTE]
+> Sample output of the Microsoft sbom-tool can be found under tab `Actions` by downloading the `artifact.zip` artifact of one of the `Microsoft SBOM Tool demo` workflow runs.
+
 ### License Scanning
 
 - [ ] [OSV scanner](https://google.github.io/osv-scanner/experimental/license-scanning/)
