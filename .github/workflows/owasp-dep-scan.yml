@@ -15,8 +15,8 @@ jobs:
       - uses: actions/checkout@v4
       - name: Install OWASP dep-scan
         run: |
+          sudo npm install -g @cyclonedx/cdxgen
           pip install owasp-depscan
-          npm install @cyclonedx/cdxgen
       - name: Run depscan
         run: |
           cd src/
