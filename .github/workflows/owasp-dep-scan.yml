@@ -8,6 +8,9 @@ jobs:
   scan:
     name: Create SBOM of .NET solution
     runs-on: ubuntu-latest
+    env:
+      FETCH_LICENSE: true
+      VDB_HOME: /home/runner/work/depscan
 
     steps:
       - uses: actions/checkout@v4
@@ -15,15 +18,14 @@ jobs:
         uses: oras-project/setup-oras@v1
       - name: Download vulnerability DB and dep-scan
         run: |
-          oras pull ghcr.io/appthreat/vdb:v5 -o $RUNNER_TEMP
-          oras pull ghcr.io/appthreat/depscan:v4 -o $RUNNER_TEMP
-          chmod +x $RUNNER_TEMP/depscan
+          mkdir -p $VDB_HOME
+          oras pull ghcr.io/appthreat/vdb:v5 -o $VDB_HOME
+          oras pull ghcr.io/appthreat/depscan:v4 -o $VDB_HOME
+          chmod +x $VDB_HOME
       - name: Run depscan
-        env:
-          FETCH_LICENSE: true
         run: |
           cd src
-          $RUNNER_TEMP/depscan --src ReactAndAspNetCoreApp.Server --reports-dir $RUNNER_TEMP/reports --csaf --profile license-compliance
+          $VDB_HOME/depscan --cache-os --src ReactAndAspNetCoreApp.Server --reports-dir $RUNNER_TEMP/reports --csaf --profile license-compliance
       - uses: actions/upload-artifact@v4
         with:
           path: $RUNNER_TEMP/reports
