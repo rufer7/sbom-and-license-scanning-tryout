@@ -49,5 +49,9 @@ What is the primary motivation for travelling?
 [3]     Secretly Working: My boss forces me to go on vacation, but I work anyway
 ";
     public const string UnknownAnswer = "I'm sorry, I didn't understand that. Please try again.";
+    public const string Recommendation = @"
+Ok. I found the perfect destination for you:
+";
     public static string Concat(params string[] strings) => string.Join(EmptyLine, strings);
+    public static string Bold(string value) => $"\x1b[1m{value}\x1b[0m";
 }
