@@ -16,12 +16,12 @@ jobs:
         with:
           dotnet-version: 8.0.x
       - name: Build
-        run: dotnet build src/ReactAndAspNetCoreApp.sln -o ./buildOutput
+        run: dotnet build src/ReactAndAspNetCoreApp.sln
       - name: Generate SBOM
         run: |
           curl -Lo $RUNNER_TEMP/sbom-tool https://github.com/microsoft/sbom-tool/releases/latest/download/sbom-tool-linux-x64
           chmod +x $RUNNER_TEMP/sbom-tool
-          $RUNNER_TEMP/sbom-tool generate -b ./buildOutput -bc . -pn Test -pv 0.0.1 -ps ArbitraryCompany -nsb https://sbom.arbitrary.com -V Verbose
+          $RUNNER_TEMP/sbom-tool generate -b /src -bc . -pn Test -pv 0.0.1 -ps ArbitraryCompany -nsb https://sbom.arbitrary.com -V Verbose
       - name: Upload a Build Artifact
         uses: actions/upload-artifact@v4
         with:
