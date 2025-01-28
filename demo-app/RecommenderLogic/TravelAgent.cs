@@ -32,7 +32,7 @@ internal class TravelAgent(DestinationProvider DestinationProvider) : IChatInter
             if (Enum.TryParse(message, out reason))
             {
                 var destination = DestinationProvider.GetDestination(ageCategory, companion, reason);
-                return Outputs.Concat(destination.Name, destination.Description);
+                return Outputs.Concat(Outputs.Recommendation, Outputs.Bold(destination.Name), destination.Description);
             }
 
             return Outputs.Concat(Outputs.UnknownAnswer, Outputs.ReasonQuestion);

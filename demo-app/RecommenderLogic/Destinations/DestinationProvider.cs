@@ -37,6 +37,9 @@ internal class DestinationProvider
         new("Cape Town", "Safari by day, sneak in emails by night—just don’t let the lions know.", AgeCategory.Senior, Companion.Family, Reason.SecretlyWorking),
     ];
 
-    public Destination GetDestination(AgeCategory ageCategory, Companion companion, Reason reason) =>
-        destinations.FirstOrDefault(d => d.AgeCategory == ageCategory && d.Companion == companion && d.Reason == reason);
+    public Destination GetDestination(AgeCategory ageCategory, Companion companion, Reason reason)
+    {
+        var res = destinations.Where(d => d.AgeCategory == ageCategory && d.Companion == companion && d.Reason == reason);
+        return res.FirstOrDefault();
+    }
 }
