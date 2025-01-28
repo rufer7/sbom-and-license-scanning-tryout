@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
       FETCH_LICENSE: true
-      VDB_HOME: /home/runner/work/depscan
+      VDB_HOME: /home/runner/work/vdb_data
 
     steps:
       - uses: actions/checkout@v4
@@ -21,7 +21,7 @@ jobs:
           mkdir -p $VDB_HOME
           oras pull ghcr.io/appthreat/vdb:v5 -o $VDB_HOME
           oras pull ghcr.io/appthreat/depscan:v4 -o $VDB_HOME
-          chmod +x $VDB_HOME
+          chmod +x $VDB_HOME/depscan
       - name: Run depscan
         run: |
           cd src
