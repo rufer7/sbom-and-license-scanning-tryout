@@ -10,7 +10,6 @@ jobs:
     runs-on: ubuntu-latest
     env:
       FETCH_LICENSE: true
-      VDB_HOME: /home/runner/work/vdb_data
 
     steps:
       - uses: actions/checkout@v4
@@ -18,14 +17,12 @@ jobs:
         uses: oras-project/setup-oras@v1
       - name: Download vulnerability DB and dep-scan
         run: |
-          mkdir -p $VDB_HOME
-          oras pull ghcr.io/appthreat/vdb:v5 -o $VDB_HOME
-          oras pull ghcr.io/appthreat/depscan:v4 -o $VDB_HOME
-          chmod +x $VDB_HOME/depscan
+          curl -LO https://github.com/appthreat/depscan-bin/releases/latest/download/depscan-linux-amd64
+          chmod +x depscan-linux-amd64
+          ./depscan-linux-amd64 --help
       - name: Run depscan
         run: |
-          cd src
-          $VDB_HOME/depscan --cache-os --src ReactAndAspNetCoreApp.Server --reports-dir $RUNNER_TEMP/reports --csaf --profile license-compliance
+          ./depscan-linux-amd64 --cache-os --src src/ReactAndAspNetCoreApp.Server --reports-dir $RUNNER_TEMP/reports --csaf --profile license-compliance
       - uses: actions/upload-artifact@v4
         with:
           path: $RUNNER_TEMP/reports
