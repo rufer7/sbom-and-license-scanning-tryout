@@ -1,0 +1,25 @@
+name: Dependency Track demo
+
+on:
+  push:
+    branches: [ "main", "13-create-sbom-and-upload-to-dtrack" ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Generate XML SBOM
+        uses: CycloneDX/gh-dotnet-generate-sbom@v1
+        with:
+          path: ./demo-app/TravelDestinationRecommender.sln
+          github-bearer-token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Upload SBOM to Dependency-Track
+        uses: DependencyTrack/gh-upload-sbom@v3
+        with:
+          serverHostname: 'isol-d1-appsrv-dtrack.azurewebsites.net'
+          apiKey: ${{ secrets.DEPENDENCYTRACK_APIKEY }}
+          project: '0becc5cc-1d9d-4822-a828-2972c5ffd90b'
