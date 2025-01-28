@@ -1,6 +1,7 @@
 name: OWASP dep-scan demo
 
 on:
+  workflow_dispatch:
   push:
     branches: ["main"]
 
@@ -12,15 +13,15 @@ jobs:
       FETCH_LICENSE: true
 
     steps:
-      - uses: actions/checkout@v4
-      - name: Install OWASP dep-scan
-        run: |
-          sudo npm install -g @cyclonedx/cdxgen
-          pip install owasp-depscan
-      - name: Run depscan
-        run: |
-          # cd src/
-          depscan --src src/ --reports-dir $RUNNER_TEMP/reports -t dotnet,license --profile license-compliance
-      - uses: actions/upload-artifact@v4
-        with:
-          path: $RUNNER_TEMP/reports
+    - uses: actions/checkout@v4
+    - name: Install OWASP dep-scan
+      run: |
+        sudo npm install -g @cyclonedx/cdxgen
+        pip install owasp-depscan
+    - name: Run OWASP dep-scan
+      run: |
+        cd src/
+        depscan --src src/ReactAndAspNetCoreApp.Server --reports-dir $RUNNER_TEMP/reports -t dotnet,license --profile license-compliance
+    - uses: actions/upload-artifact@v4
+      with:
+        path: $RUNNER_TEMP/reports
