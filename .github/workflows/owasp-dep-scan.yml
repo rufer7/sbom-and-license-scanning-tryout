@@ -13,16 +13,13 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
-      - name: Install and set up ORAS
-        uses: oras-project/setup-oras@v1
-      - name: Download vulnerability DB and dep-scan
+      - name: Install OWASP dep-scan
         run: |
-          curl -LO https://github.com/appthreat/depscan-bin/releases/latest/download/depscan-linux-amd64
-          chmod +x depscan-linux-amd64
-          ./depscan-linux-amd64 --help
+          pip install owasp-depscan
       - name: Run depscan
         run: |
-          ./depscan-linux-amd64 --cache-os --src src/ReactAndAspNetCoreApp.Server --reports-dir $RUNNER_TEMP/reports --csaf --profile license-compliance
+          cd src/
+          depscan --cache-os --src src/ReactAndAspNetCoreApp.Server --reports-dir $RUNNER_TEMP/reports --csaf --profile license-compliance
       - uses: actions/upload-artifact@v4
         with:
           path: $RUNNER_TEMP/reports
