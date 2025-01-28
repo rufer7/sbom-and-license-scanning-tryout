@@ -19,7 +19,7 @@ jobs:
       - name: Run depscan
         run: |
           cd src/
-          depscan --src ReactAndAspNetCoreApp.Server --reports-dir $RUNNER_TEMP/reports --profile 'license-compliance'
+          depscan --src ReactAndAspNetCoreApp.Server --reports-dir $RUNNER_TEMP/reports -t dotnet,license --profile license-compliance
       - uses: actions/upload-artifact@v4
         with:
           path: $RUNNER_TEMP/reports
