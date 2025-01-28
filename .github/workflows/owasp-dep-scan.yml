@@ -16,6 +16,7 @@ jobs:
       - name: Install OWASP dep-scan
         run: |
           pip install owasp-depscan
+          npm install @cyclonedx/cdxgen
       - name: Run depscan
         run: |
           cd src/
