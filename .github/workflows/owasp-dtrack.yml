@@ -24,6 +24,6 @@ jobs:
       - name: Upload SBOM to Dependency-Track
         uses: DependencyTrack/gh-upload-sbom@v3
         with:
-          serverHostname: 'isol-d1-appsrv-dtrack.azurewebsites.net'
+          serverHostname: isol-d1-appsrv-dtrack-api.azurewebsites.net
           apiKey: ${{ secrets.DEPENDENCYTRACK_APIKEY }}
           project: '0becc5cc-1d9d-4822-a828-2972c5ffd90b'
