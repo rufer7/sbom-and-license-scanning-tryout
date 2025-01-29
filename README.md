@@ -3,7 +3,7 @@
 [![License](https://img.shields.io/badge/license-Apache%20License%202.0-blue.svg)](https://github.com/rufer7/sbom-and-license-scanning-tryout/blob/main/LICENSE)
 [![Microsoft SBOM Tool demo](https://github.com/rufer7/sbom-and-license-scanning-tryout/actions/workflows/msft-sbom-tool.yml/badge.svg)](https://github.com/rufer7/sbom-and-license-scanning-tryout/actions/workflows/msft-sbom-tool.yml)
 [![OWASP dep-scan demo](https://github.com/rufer7/sbom-and-license-scanning-tryout/actions/workflows/owasp-dep-scan.yml/badge.svg)](https://github.com/rufer7/sbom-and-license-scanning-tryout/actions/workflows/owasp-dep-scan.yml)
-[![OSV-Scanner-demo.yml](https://github.com/rufer7/sbom-and-license-scanning-tryout/actions/workflows/osv-demo.yml/badge.svg)](https://github.com/rufer7/sbom-and-license-scanning-tryout/actions/workflows/osv-demo.yml)
+[![OSV-Scanner-demo.yml](https://github.com/rufer7/sbom-and-license-scanning-tryout/actions/workflows/osv-scanner.yml/badge.svg)](https://github.com/rufer7/sbom-and-license-scanning-tryout/actions/workflows/osv-scanner.yml)
 
 ## Vulnerability scanning and license compliance in the .NET ecosystem
 
