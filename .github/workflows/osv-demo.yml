@@ -14,7 +14,7 @@ jobs:
     - uses: actions/checkout@v4
     - name: Install OSV-Scanner
       run: |
-        go install github.com/google/osv-scanner/cmd/osv-scanner@v2.0.0-beta1
+        go install github.com/google/osv-scanner/cmd/osv-scanner@v1
     - name: Run OSV-Scanner
       run: |
         osv-scanner scan source -r src
