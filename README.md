@@ -120,8 +120,7 @@ Both local repositories and container images are supported as the input, and the
 
 For more details see [here](https://depscan.readthedocs.io/)
 
-> [!TIP]
-> You should plan enough time for the setup - in my experience, it is a little more complicated/expensive for .NET projects and solutions.
+> **NOTE:** You should plan enough time for the setup - in my experience, it is a little more complicated/expensive for .NET projects and solutions.
 
 </details>
 
