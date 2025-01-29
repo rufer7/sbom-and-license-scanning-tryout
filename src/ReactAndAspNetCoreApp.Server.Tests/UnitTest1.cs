@@ -5,7 +5,7 @@ namespace ReactAndAspNetCoreApp.Server.Tests
         [Fact]
         public void Test1()
         {
-
+            // TODO - implement first unit test
         }
     }
 }
