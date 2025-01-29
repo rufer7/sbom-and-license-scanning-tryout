@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReactAndAspNetCoreApp.Serve
 EndProject
 Project("{54A90642-561A-4BB1-A94E-469ADEE60C69}") = "reactandaspnetcoreapp.client", "reactandaspnetcoreapp.client\reactandaspnetcoreapp.client.esproj", "{1EB63FC4-4138-4F6B-99A0-611699E7CF5F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReactAndAspNetCoreApp.Server.Tests", "ReactAndAspNetCoreApp.Server.Tests\ReactAndAspNetCoreApp.Server.Tests.csproj", "{065EA26C-24F7-42B1-81B5-3DC9EE827CE3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -23,6 +25,10 @@ Global
 		{1EB63FC4-4138-4F6B-99A0-611699E7CF5F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1EB63FC4-4138-4F6B-99A0-611699E7CF5F}.Release|Any CPU.Build.0 = Release|Any CPU
 		{1EB63FC4-4138-4F6B-99A0-611699E7CF5F}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{065EA26C-24F7-42B1-81B5-3DC9EE827CE3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{065EA26C-24F7-42B1-81B5-3DC9EE827CE3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{065EA26C-24F7-42B1-81B5-3DC9EE827CE3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{065EA26C-24F7-42B1-81B5-3DC9EE827CE3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
