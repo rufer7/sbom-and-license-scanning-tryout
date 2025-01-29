@@ -154,5 +154,6 @@ See [here](https://docs.github.com/en/code-security/supply-chain-security/unders
 <summary>Sources</summary>
 
 - https://www.cisa.gov/
+- https://docs.github.com/en/code-security/supply-chain-security/understanding-your-software-supply-chain/about-dependency-review
 
 </details>
