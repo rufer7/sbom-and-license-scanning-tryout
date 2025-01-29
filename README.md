@@ -7,17 +7,17 @@
 
 ## Vulnerability scanning and license compliance in the .NET ecosystem
 
-by Marc Rufer & Raffael Nussbaumer
+by Marc Rufer (@rufer7) & Raffael Nussbaumer (@R4ffi)
 January 29, 2025
 
-https://github.com/rufer7/sbom-and-license-scanning-tryout
+[GitHub repository](https://github.com/rufer7/sbom-and-license-scanning-tryout)
 
 <details>
 <summary>What we are showing today</summary>
 
 - What SBOM is and why you should consider using it
 - How you create an SBOM for your .NET application
-- How you can keep track of your SBOMS with OWASP Dependency Track and/or GitHub Advanced Security
+- How you can keep track of your SBOMS with OWASP Dependency Track and/or GitHub
 
 </details>
 
@@ -40,16 +40,16 @@ free or paid, and the data can be widely available or access-restricted.
 
 To ensure SBOMs are interoperable and easily exchangeable, standardized formats are used:
 
-1. **SPDX** (Software Package Data Exchange): A standard supported by the Linux Foundation.
-2. **CycloneDX**: A lightweight format specifically designed for security use cases.
-3. **SWID Tags** (Software Identification Tags): An ISO standard for software identification.
+1. **SPDX** (Software Package Data Exchange): A standard supported by the Linux Foundation
+2. **CycloneDX**: A lightweight format specifically designed for security use cases
+3. **SWID Tags** (Software Identification Tags): A ISO standard for software identification
 
 </details>
 
 ---
 
 <details>
-<summary>Why Are SBOMs Important?</summary>
+<summary>Why Are SBOMs important?</summary>
 
 1. **Transparency**:
 
@@ -60,6 +60,7 @@ To ensure SBOMs are interoperable and easily exchangeable, standardized formats 
    - SBOMs help identify vulnerabilities in components, allowing organizations to assess and mitigate risks such as zero-day vulnerabilities more effectively.
 
 3. **Compliance**:
+
    - Documenting software licenses ensures companies meet licensing requirements and avoid legal complications.
 
 </details>
@@ -114,6 +115,14 @@ architecture-beta
 <details>
 <summary>OWASP dep-scan</summary>
 
+OWASP dep-scan is a next-generation security and risk audit tool based on known vulnerabilities, advisories, and license limitations for project dependencies.
+Both local repositories and container images are supported as the input, and the tool is ideal for integration with ASPM/VM platforms and in CI environments.
+
+For more details see [here](https://depscan.readthedocs.io/)
+
+> [!TIP]
+> You should plan enough time for the setup - in my experience, it is a little more complicated/expensive for .NET projects and solutions.
+
 </details>
 
 ---
@@ -121,12 +130,21 @@ architecture-beta
 <details>
 <summary>OSV-Scanner</summary>
 
+OSV-Scanner is a tool that checks your software against the Google Open Source Vulnerabilities (OSV) database.
+It is a lightweight, easy-to-use tool that can be integrated into your CI/CD pipeline to ensure your software is free of known vulnerabilities.
+
+For more details see [here](https://google.github.io/osv-scanner/)
+
 </details>
 
 ---
 
 <details>
-<summary>GitHub Advanced Security</summary>
+<summary>Dependency review</summary>
+
+Dependency review lets you catch insecure dependencies before you introduce them to your environment, and provides information on license, dependents, and age of dependencies.
+
+See [here](https://docs.github.com/en/code-security/supply-chain-security/understanding-your-software-supply-chain/about-dependency-review) for more details
 
 </details>
 
