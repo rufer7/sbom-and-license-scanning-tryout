@@ -121,6 +121,16 @@ architecture-beta
 ---
 
 <details>
+<summary>OSV-Scanner</summary>
+
+
+
+</details>
+
+
+---
+
+<details>
 <summary>GitHub Advanced Security</summary>
 
 
