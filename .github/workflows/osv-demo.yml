@@ -23,7 +23,3 @@ jobs:
     - uses: actions/upload-artifact@v4
       with:
         path: $RUNNER_TEMP/reports
-
-
-
-osv-scanner --experimental-licenses-summary path/to/repository
