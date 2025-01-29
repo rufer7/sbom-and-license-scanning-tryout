@@ -26,7 +26,6 @@ jobs:
         pip install owasp-depscan
     - name: Run OWASP dep-scan
       run: |
-        depscan --src src/reactandaspnetcoreapp.client --reports-dir $RUNNER_TEMP/reports/1 --debug
         depscan --src src --reports-dir $RUNNER_TEMP/reports -t dotnet,license --debug
     - uses: actions/upload-artifact@v4
       with:
