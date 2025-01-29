@@ -26,9 +26,9 @@ https://github.com/rufer7/sbom-and-license-scanning-tryout
 <details>
 <summary>What is an SBOM?</summary>
 
-A Software Bill of Materials (SBOM) is a formal record containing the details and 
+A Software Bill of Materials (SBOM) is a formal record containing the details and
 **supply chain relationships** of various components used in building software.
-These components, including libraries and modules, can be open source or proprietary, 
+These components, including libraries and modules, can be open source or proprietary,
 free or paid, and the data can be widely available or access-restricted.
 
 </details>
@@ -39,6 +39,7 @@ free or paid, and the data can be widely available or access-restricted.
 <summary>Standards and Formats</summary>
 
 To ensure SBOMs are interoperable and easily exchangeable, standardized formats are used:
+
 1. **SPDX** (Software Package Data Exchange): A standard supported by the Linux Foundation.
 2. **CycloneDX**: A lightweight format specifically designed for security use cases.
 3. **SWID Tags** (Software Identification Tags): An ISO standard for software identification.
@@ -50,13 +51,15 @@ To ensure SBOMs are interoperable and easily exchangeable, standardized formats 
 <details>
 <summary>Why Are SBOMs Important?</summary>
 
-1. **Transparency**:  
+1. **Transparency**:
+
    - They provide a clear view of all software components, especially useful when using third-party or open-source dependencies.
 
-2. **Security Management**:  
+2. **Security Management**:
+
    - SBOMs help identify vulnerabilities in components, allowing organizations to assess and mitigate risks such as zero-day vulnerabilities more effectively.
 
-3. **Compliance**:  
+3. **Compliance**:
    - Documenting software licenses ensures companies meet licensing requirements and avoid legal complications.
 
 </details>
@@ -67,19 +70,18 @@ To ensure SBOMs are interoperable and easily exchangeable, standardized formats 
 <summary>SBOM and .NET</summary>
 
 - [CycloneDX module for .NET](https://github.com/CycloneDX/cyclonedx-dotnet)
-    ```powershell
-    dotnet tool install --global CycloneDX
-    dotnet CycloneDX YourSolution.sln -o /output/path
-    ```
+  ```powershell
+  dotnet tool install --global CycloneDX
+  dotnet CycloneDX YourSolution.sln -o /output/path
+  ```
 - [GitHub action to generate a CycloneDX SBOM for .NET](https://github.com/CycloneDX/gh-dotnet-generate-sbom)
-    ```
-    - name: Generate XML SBOM
-      uses: CycloneDX/gh-dotnet-generate-sbom@v1
-      with:
-        path: ./CycloneDX.sln
-        github-bearer-token: ${{ secrets.GITHUB_TOKEN }}
-    ```
-
+  ```
+  - name: Generate XML SBOM
+    uses: CycloneDX/gh-dotnet-generate-sbom@v1
+    with:
+      path: ./CycloneDX.sln
+      github-bearer-token: ${{ secrets.GITHUB_TOKEN }}
+  ```
 
 </details>
 
@@ -105,7 +107,6 @@ architecture-beta
   backend:R --> L:db
 ```
 
-
 </details>
 
 ---
@@ -113,32 +114,23 @@ architecture-beta
 <details>
 <summary>OWASP dep-scan</summary>
 
-
-
 </details>
-
 
 ---
 
 <details>
 <summary>OSV-Scanner</summary>
 
-
-
 </details>
-
 
 ---
 
 <details>
 <summary>GitHub Advanced Security</summary>
 
-
-
 </details>
 
 ---
-
 
 <details>
 <summary>Sources</summary>
@@ -146,6 +138,3 @@ architecture-beta
 - https://www.cisa.gov/
 
 </details>
-
-
-
